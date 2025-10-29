@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VetPro: Past, Present, and Future</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        section {
+            scroll-margin-top: 80px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 50%;
+            background-color: white;
+            border: 4px solid #3b82f6; /* blue-500 */
+            top: 50%;
+            transform: translateY(-50%);
+            /* Default for mobile */
+            left: calc(-2rem - 0.625rem);
+            z-index: 10;
+        }
+        @media (min-width: 768px) {
+            #timeline::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 2px;
+                background-color: #bfdbfe; /* Tailwind's blue-200 */
+            }
+            /* Position dot on the right for left-side items (not flex-row-reverse) */
+            .mb-12:not(.flex-row-reverse) .timeline-item::before {
+                left: auto;
+                right: calc(-2rem - 0.625rem);
+            }
+            /* Position dot on the left for right-side items (flex-row-reverse) */
+            .mb-12.flex-row-reverse .timeline-item::before {
+                left: calc(-2rem - 0.625rem);
+                right: auto;
+            }
+        }
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-slate-800">
+                The World of <span class="text-blue-600">VetPro</span>
+            </h1>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#history" class="text-slate-600 hover:text-blue-600 transition-colors">History</a>
+                <a href="#pending-work" class="text-slate-600 hover:text-blue-600 transition-colors">Projects & Priorities</a>
+                <a href="#team" class="text-slate-600 hover:text-blue-600 transition-colors">Teams</a>
+                <a href="#configurations" class="text-slate-600 hover:text-blue-600 transition-colors">Configurations</a>
+                <a href="#california-vetpro" class="text-slate-600 hover:text-blue-600 transition-colors">California VetPro</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- History Section -->
+        <section id="history" class="mb-24">
+            <h2 class="text-4xl font-bold text-center text-slate-800 mb-4">Our Journey</h2>
+            <p class="text-center text-slate-500 mb-16 max-w-2xl mx-auto">From a DOS application to a national cloud platform, the evolution of VetPro has been driven by innovation and a commitment to serving veterans.</p>
+            
+            <div id="timeline" class="relative border-l-2 border-blue-200 ml-4 md:border-l-0 md:ml-0">
+                <!-- Timeline Item: 1991 -->
+                <div class="mb-12 md:flex items-center">
+                    <div class="md:w-1/2 md:pr-8 md:flex md:justify-end">
+                       <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 timeline-item relative ml-8 md:ml-0 md:text-left md:max-w-xl">
+                            <h3 class="text-xl font-bold text-blue-600 mb-2">1991 - VetProDOS</h3>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li class="text-slate-600">VetProDOS is developed by Panoramic Software for California County Veteran Service Offices to manage claims and file VA claims on the behalf of Veterans</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hidden md:block md:w-1/2"></div>
+                </div>
+
+                <!-- Timeline Item: 2000 -->
+                 <div class="mb-12 md:flex items-center flex-row-reverse">
+                    <div class="md:w-1/2 md:pl-8 md:flex">
+                        <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 timeline-item relative ml-8 md:ml-0 md:max-w-xl">
+                             <h3 class="text-xl font-bold text-blue-600 mb-2">2000 - VetProSQL</h3>
+                             <ul class="list-disc list-inside space-y-2">
+                                <li class="text-slate-600">VetPro system is transitioned from a DOS application to Microsoft Windows and SQL server platform.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hidden md:block md:w-1/2"></div>
+                </div>
+                
+                <!-- Timeline Item: 2005 -->
+                <div class="mb-12 md:flex items-center">
+                    <div class="md:w-1/2 md:pr-8 md:flex md:justify-end">
+                        <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 timeline-item relative ml-8 md:ml-0 md:text-left md:max-w-xl">
+                            <h3 class="text-xl font-bold text-blue-600 mb-2">2005 - VetProWeb is LIVE!</h3>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li class="text-slate-600">VetProWeb is launched as a cloud based web application.</li>
+                                <li class="text-slate-600">15 counties converted with 49 users.</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <div class="hidden md:block md:w-1/2"></div>
+                </div>
+
+                <!-- Timeline Item: 2010-2013 -->
+                 <div class="mb-12 md:flex items-center flex-row-reverse">
+                    <div class="md:w-1/2 md:pl-8 md:flex">
+                        <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 timeline-item relative ml-8 md:ml-0 md:max-w-xl">
+                            <h3 class="text-xl font-bold text-blue-600 mb-2">2010-2013 - VetProWeb for CALVET</h3>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li class="text-slate-600">All California Counties migrated to use a single application for claims and reporting. </li>
+                                <li class="text-slate-600">Onboarding results in 57 agencies/400+ users.</li>
+                                <li class="text-slate-600">A single application allows CalVet to ensure quality and consistency in claims processing.</li>
+                                <li class="text-slate-600">VetProWeb also allows CalVet to track county submission data to inform distribution of subvention funds to counties based on claims filed and awarded.</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <div class="hidden md:block md:w-1/2"></div>
+                </div>
+                
+                <!-- Timeline Item: 2013-2016 -->
+                <div class="mb-12 md:flex items-center">
+                    <div class="md:w-1/2 md:pr-8 md:flex md:justify-end">
+                       <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 timeline-item relative ml-8 md:ml-0 md:text-left md:max-w-xl">
+                             <h3 class="text-xl font-bold text-blue-600 mb-2">2013-2016 - Continued VetProWeb Enhancements</h3>
+                             <ul class="list-disc list-inside space-y-2">
+                                <li class="text-slate-600">System evolves from filing claims via fax to electronic submission.</li>
+                                <li class="text-slate-600">District Office review process is implemented to help ensure accuracy and completeness of claims.</li>
+                                <li class="text-slate-600">Additional Features incrementally added to the VetProWeb application</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hidden md:block md:w-1/2"></div>
+                </div>
+
+                <!-- Timeline Item: 2015 -->
+                <div class="mb-12 md:flex items-center flex-row-reverse">
+                    <div class="md:w-1/2 md:pl-8 md:flex">
+                         <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 timeline-item relative ml-8 md:ml-0 md:max-w-xl">
+                             <h3 class="text-xl font-bold text-blue-600 mb-2">2015 - The Plan for the Future</h3>
+                             <ul class="list-disc list-inside space-y-2">
+                                <li class="text-slate-600">Panoramic assesses need to move all applications to a new platform for continued growth, innovation, and stability.</li>
+                                <li class="text-slate-600">VetProWeb is selected as the pilot product to be modernized.</li>
+                            </ul>
+                         </div>
+                    </div>
+                     <div class="hidden md:block md:w-1/2"></div>
+                </div>
+                <!-- Timeline Item: 2016-2017 -->
+                <div class="mb-12 md:flex items-center">
+                    <div class="md:w-1/2 md:pr-8 md:flex md:justify-end">
+                       <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 timeline-item relative ml-8 md:ml-0 md:text-left md:max-w-xl">
+                             <h3 class="text-xl font-bold text-green-600 mb-2">2016-2017 - Foundations of the New Platform</h3>
+                             <ul class="list-disc list-inside space-y-2">
+                                <li class="text-slate-600">Requirements Gathering and Analysis</li>
+                                <li class="text-slate-600">Cloud Infrastructure</li>
+                                <li class="text-slate-600">Architecture of Application Environment</li>
+                                <li class="text-slate-600">Technology Stack Selection (Elm, PostGreSQL, Slate, Haskell)</li>
+                                <li class="text-slate-600">Database and Backup Processes</li>
+                                <li class="text-slate-600">Base Application (Menus, Grids, Reporting Tools)</li>
+                             </ul>
+                         </div>
+                    </div>
+                     <div class="hidden md:block md:w-1/2"></div>
+                </div>
+                
+                <!-- Timeline Item: 2017-2018 -->
+                <div class="mb-12 md:flex items-center flex-row-reverse">
+                    <div class="md:w-1/2 md:pl-8 md:flex">
+                         <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 timeline-item relative ml-8 md:ml-0 md:max-w-xl">
+                             <h3 class="text-xl font-bold text-green-600 mb-2">2017-2018 - Core Functionality</h3>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li class="text-slate-600">Prototype Design & Review</li>
+                                <li class="text-slate-600">VA Form Analysis and Rendering Functionality</li>
+                                <li class="text-slate-600">File Upload Functionality</li>
+                                <li class="text-slate-600">User Management</li>
+                                <li class="text-slate-600">Office Management</li>
+                                <li class="text-slate-600">Case Management</li>
+                                <li class="text-slate-600">Benefit Management</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <div class="hidden md:block md:w-1/2"></div>
+                </div>
+                
+                <!-- Timeline Item: 2018-2019 -->
+                <div class="mb-12 md:flex items-center">
+                    <div class="md:w-1/2 md:pr-8 md:flex md:justify-end">
+                       <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 timeline-item relative ml-8 md:ml-0 md:text-left md:max-w-xl">
+                             <h3 class="text-xl font-bold text-green-600 mb-2">2018-2019 - Launch Preparation</h3>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li class="text-slate-600">Direct Submission</li>
+                                <li class="text-slate-600">Infrastructure</li>
+                                <li class="text-slate-600">Business Logic</li>
+                                <li class="text-slate-600">Begin Form Development</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <div class="hidden md:block md:w-1/2"></div>
+                </div>
+
+                 <!-- Timeline Item: March 2019 -->
+                <div class="mb-12 md:flex items-center flex-row-reverse">
+                    <div class="md:w-1/2 md:pl-8 md:flex">
+                         <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 timeline-item relative ml-8 md:ml-0 md:max-w-xl">
+                             <h3 class="text-xl font-bold text-blue-600 mb-2">April 2019 - VetPro National Launched</h3>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li class="text-slate-600">VetPro National launched on April 1, 2019, with LaSalle County, Illinois as the first to go live and still use VetPro today.</li>
+                                <li class="text-slate-600">This national platform allows us to generate revenue while refining the application for the eventual CalVet migration.</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <div class="hidden md:block md:w-1/2"></div>
+                </div>
+
+                 <!-- Timeline Item: 2019-2020 -->
+                <div class="mb-12 md:flex items-center">
+                    <div class="md:w-1/2 md:pr-8 md:flex md:justify-end">
+                       <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 timeline-item relative ml-8 md:ml-0 md:text-left md:max-w-xl">
+                             <h3 class="text-xl font-bold text-green-600 mb-2">2019-2020 - Pandemic Response & Growth</h3>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li class="text-slate-600">Accreditation Management and Direct Submit Management</li>
+                                <li class="text-slate-600">Signature portal</li>
+                                <li class="text-slate-600 ml-6">Built at the onset of the COVID-19 pandemic to allow VSOs to continue serving Veterans remotely.</li>
+                                <li class="text-slate-600">First custom reports module for South Carolina</li>
+                                <li class="text-slate-600">American Legion for the State of CA came onboard</li>
+                                <li class="text-slate-600">March 2020: VetPro Made Available for Free During Covid.</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <div class="hidden md:block md:w-1/2"></div>
+                </div>
+
+                 <!-- Timeline Item: 2020-2021 -->
+               <div class="mb-12 md:flex items-center flex-row-reverse">
+                    <div class="md:w-1/2 md:pl-8 md:flex">
+                         <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 timeline-item relative ml-8 md:ml-0 md:max-w-xl">
+                            <h3 class="text-xl font-bold text-green-600 mb-2">2020-2021 - Additional CalVet State Specific Features</h3>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li class="text-slate-600">College Fee Waiver Verification Portal</li>
+                                <li class="text-slate-600">Agency Attachments</li>
+                                <li class="text-slate-600">County Form Letter Management</li>
+                                <li class="text-slate-600">Medi-Cal Avoidance Tracking</li>
+                                <li class="text-slate-600">Base State Application</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <div class="hidden md:block md:w-1/2"></div>
+                </div>
+                <!-- Timeline Item: 2021-2023 -->
+                <div class="mb-12 md:flex items-center">
+                    <div class="md:w-1/2 md:pr-8 md:flex md:justify-end">
+                       <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 timeline-item relative ml-8 md:ml-0 md:text-left md:max-w-2xl">
+                            <h3 class="text-xl font-bold text-green-600 mb-2">2021-2023 - Key Partnerships</h3>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li class="text-slate-600">Dale K. Graham Foundation Onboarding</li>
+                                <li class="text-slate-600">The first custom forms module was launched for NM.</li>
+                            </ul>
+                        </div>
+                   </div>
+                    <div class="hidden md:block md:w-1/2"></div>
+               </div>
+
+               <!-- Timeline Item: 2023 - 2024 -->
+               <div class="mb-12 md:flex items-center flex-row-reverse">
+                    <div class="md:w-1/2 md:pl-8 md:flex">
+                         <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 timeline-item relative ml-8 md:ml-0 md:max-w-xl">
+                            <h3 class="text-xl font-bold text-green-600 mb-2">2023-2024 - Renewed Momentum</h3>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li class="text-slate-600">Form Letters</li>
+                                <li class="text-slate-600">Reception Queue</li>
+                            </ul>
+                            <p class="text-slate-600"></p>
+                        </div>
+                    </div>
+                     <div class="hidden md:block md:w-1/2"></div>
+                </div>
+
+               <!-- Timeline Item: 2025 AutoEstablish -->
+                <div class="mb-12 md:flex items-center">
+                    <div class="md:w-1/2 md:pr-8 md:flex md:justify-end">
+                       <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 timeline-item relative ml-8 md:ml-0 md:text-left md:max-w-2xl">
+                            <h3 class="text-xl font-bold text-green-600 mb-2">2025 - AutoEstablish Release</h3>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li class="text-slate-600">The release of AutoEstablish marks a significant milestone in automating and streamlining the benefits application process for veterans.</li>
+                            </ul>
+                        </div>
+                    </div>
+                     <div class="hidden md:block md:w-1/2"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Pending Work Section -->
+        <section id="pending-work" class="mb-24">
+            <h2 class="text-4xl font-bold text-center text-slate-800 mb-4">Projects and Priorities</h2>
+            <p class="text-center text-slate-500 mb-16 max-w-2xl mx-auto">Strategic prioritization of projects to maximize impact and meet critical deadlines. Projects are ordered by priority level.</p>
+
+            <!-- Priority 1: VetPro National Critical Maintenance & New Mexico -->
+            <div class="mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full bg-red-100 mr-4">
+                        <span class="text-lg font-bold text-red-600">1</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">Priority 1: VetPro National Critical Maintenance & New Mexico</h3>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                <!-- VetPro National Critical Maintenance Card -->
+                <div class="bg-white p-6 rounded-lg shadow-md border-2 border-red-300 hover:shadow-xl hover:-translate-y-1 transition-all">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-2">VetPro National Critical Maintenance</h3>
+                    <p class="text-slate-500 mb-4 text-sm">Work that must be completed to keep VetPro National running smoothly.</p>
+                    <ul class="space-y-2 text-slate-600">
+                        <li class="flex items-start"><i data-lucide="loader-circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Critical / Blocking Defects</span></li>
+                        <li class="flex items-start"><i data-lucide="loader-circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Hot Fixes & Broken Releases</span></li>
+                        <li class="flex items-start"><i data-lucide="loader-circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Failing Migration Issues</span></li>
+                        <li class="flex items-start"><i data-lucide="loader-circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Breaking Changes from External Teams</span></li>
+                        <li class="flex items-start"><i data-lucide="loader-circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Urgent/Broken VA Form Updates</span></li>
+                        <li class="flex items-start"><i data-lucide="loader-circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Critical Performance Issues (e.g., outages)</span></li>
+                    </ul>
+                </div>
+            
+                <!-- New Mexico Card -->
+                <div class="bg-white p-6 rounded-lg shadow-md border-2 border-red-300 hover:shadow-xl hover:-translate-y-1 transition-all">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-2">New Mexico</h3>
+                    <p class="text-sm text-red-600 font-semibold mb-3">⚠️ Pending contract signature</p>
+                    <p class="text-slate-500 mb-4 text-sm">Short-term billable project, est. 7 weeks post-signature. Fulfills contractual obligation.</p>
+                    <ul class="space-y-2 text-slate-600">
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Add certifying official signature to 10 reports</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Remove 50% value from DVS 15 form</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Add DVS 16 application to the state module</span></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+
+            <!-- Priority 2: CalVet Work -->
+            <div class="mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full bg-orange-100 mr-4">
+                        <span class="text-lg font-bold text-orange-600">2</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">Priority 2: CalVet Work</h3>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                <!-- CalVet 2025-2026 Card -->
+                <div class="bg-white p-6 rounded-lg shadow-md border-2 border-orange-300 hover:shadow-xl hover:-translate-y-1 transition-all">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">CalVet 2025-2026</h3>
+                    <p class="text-slate-500 mb-4 text-sm">Contracted work due May 2026. Focus on design and foundational development.</p>
+                    <ul class="space-y-2 text-slate-600">
+                        <li class="flex items-start"><i data-lucide="circle-ellipsis" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Design DO Review Module</span></li>
+                        <li class="flex items-start"><i data-lucide="circle-ellipsis" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Design Audit Module</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Design CalVet Reports</span></li>
+                        <li class="flex items-start"><i data-lucide="help-circle" class="w-5 h-5 text-yellow-500 mr-2 mt-1 shrink-0"></i><span>Design State Veteran Transfer Queue</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Bring State App up to date</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>~ 600 Hours of Development of Designed Features</span></li>
+                    </ul>
+                </div>
+                <!-- CalVet 2026-2027 Card -->
+                <div class="bg-white p-6 rounded-lg shadow-md border-2 border-orange-300 hover:shadow-xl hover:-translate-y-1 transition-all">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">CalVet 2026-2027</h3>
+                    <p class="text-slate-500 mb-4 text-sm">Final development, implementation, and integration phase.</p>
+                    <ul class="space-y-2 text-slate-600">
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Complete DO Review Module.</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Complete Audit Module</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Complete CalVet Reports.</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Implement Reception Queue.</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Integrate College Fee Waiver</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Integrate Medi-Cal Cost Avoidance</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Integrate Custom Forms.</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Data Conversion </span></li>
+                    </ul>
+                </div>
+                <!-- CalVet 2026-2027 Card -->
+                <div class="bg-white p-6 rounded-lg shadow-md border-2 border-orange-300 hover:shadow-xl hover:-translate-y-1 transition-all">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">System Deployment</h3>
+                    <p class="text-slate-500 mb-4 text-sm">Actual system deployment and cutover support.</p>
+                    <ul class="space-y-2 text-slate-600">
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Migration Execution</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>System Deployment</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Training</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Go-Live Support</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Critical Bug Fixes</span></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+
+            <!-- Priority 3: VetPro National Maintenance -->
+            <div class="mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full bg-yellow-100 mr-4">
+                        <span class="text-lg font-bold text-yellow-600">3</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">Priority 3: VetPro National Maintenance</h3>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                <!-- VetPro National Maintenance Card -->
+                <div class="bg-white p-6 rounded-lg shadow-md border-2 border-yellow-300 hover:shadow-xl hover:-translate-y-1 transition-all">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">VetPro National Maintenance</h3>
+                    <p class="text-slate-500 mb-4 text-sm">Required work to keep the instances of VetPro National, the South Carolina State app, and the New Mexico state app up-to-date and functional.</p>
+                     <ul class="space-y-2 text-slate-600">
+                        <li class="flex items-start"><i data-lucide="loader-circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Low-Priority Defects/Enhancements</span></li>
+                        <li class="flex items-start"><i data-lucide="loader-circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Routine VA Form Updates.</span></li>
+                        <li class="flex items-start"><i data-lucide="loader-circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>General Performance Optimizations</span></li>
+                        <li class="flex items-start"><i data-lucide="loader-circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Resolving Non-Urgent Migration Issues and Updating Migrators</span></li>
+                        <li class="flex items-start"><i data-lucide="loader-circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Standard Releases </span></li>
+                        <li class="flex items-start"><i data-lucide="loader-circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Non-Breaking External Team Changes (Backend, DB, Purescript Lib, etc)</span></li>
+                        <li class="flex items-start"><i data-lucide="loader-circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Technical Maintenance</span></li>
+                        <li class="flex items-start"><i data-lucide="loader-circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Training (Onboarding, purescript, continuous learning)</span></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+
+            <!-- Priority 4: VetPro National Features -->
+            <div class="mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full bg-green-100 mr-4">
+                        <span class="text-lg font-bold text-green-600">4</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">Priority 4: VetPro National Features</h3>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                <!-- VetPro National Features Card -->
+                <div class="bg-white p-6 rounded-lg shadow-md border-2 border-green-300 hover:shadow-xl hover:-translate-y-1 transition-all">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">VetPro National Features</h3>
+                    <p class="text-slate-500 mb-4 text-sm">Development items for VetPro National. Note: Form Letters integration is required for CalVet.</p>
+                    <ul class="space-y-2 text-slate-600">
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span class="font-bold">Integrate Form Letters</span> <span class="text-xs text-green-600 ml-2">(CalVet requirement)</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Improve multiple signature workflow</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Improve Interactions</span></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+
+            <!-- Priority 5: Future Work -->
+            <div class="mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-100 mr-4">
+                        <span class="text-lg font-bold text-blue-600">5</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">Priority 5: Future Work</h3>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                <!--VetPro National Wishlist -->
+                <div class="bg-white p-6 rounded-lg shadow-md border-2 border-blue-300 hover:shadow-xl hover:-translate-y-1 transition-all">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">VetPro National Wishlist</h3>
+                    <p class="text-slate-500 mb-4 text-sm">Development items for VetPro National. Note: Form Letters integration is required for CalVet.</p>
+                    <ul class="space-y-2 text-slate-600">
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Associations/Family Tree: Version 2</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Decisions: Version 2</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Notifications:  Version 2</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Reminders: Version 2</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Remote Portal: Version 2</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Actions: Version 2</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>New Reports</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>New Forms</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Financial Assistance Tracking</span></li>
+                    </ul>
+                </div>
+
+            <!-- CalVet 2026-2027 Card -->
+                <div class="bg-white p-6 rounded-lg shadow-md border-2 border-blue-300 hover:shadow-xl hover:-translate-y-1 transition-all">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">CalVet Wishlist</h3>
+                    <p class="text-slate-500 mb-4 text-sm">VetProWeb Features not yet available in VetPro National/CalVet</p>
+                    <ul class="space-y-2 text-slate-600">
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Outreach Tracking</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Cemetery Module</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Veteran Merge</span></li>
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>State Veteran Transfer Queue</span></li>
+                    </ul>
+                </div>
+
+                </div>
+            </div>
+
+            <!-- Wildcard: GDIT -->
+            <div class="mb-12">
+                <div class="flex items-center mb-6">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full bg-purple-100 mr-4">
+                        <span class="text-lg font-bold text-purple-600">?</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800">Wildcard: GDIT (Potential)</h3>
+                </div>
+                <div class="grid md:grid-cols-2 gap-8">
+                <!-- GDIT Card -->
+                <div class="bg-white p-6 rounded-lg shadow-md border-2 border-purple-300 hover:shadow-xl hover:-translate-y-1 transition-all">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-2">GDIT (Potential)</h3>
+                    <p class="text-sm text-purple-600 font-semibold mb-3">⚡ Wildcard - May require new team</p>
+                    <p class="text-slate-500 mb-4 text-sm">A potential major contract with unclear timelines and expectations. High revenue potential. If this contract materializes, we will likely bring on a new team to either work on this project or backfill existing team members so they can transition to GDIT.</p>
+                    <ul class="space-y-2 text-slate-600">
+                        <li class="flex items-start"><i data-lucide="circle" class="w-5 h-5 text-green-500 mr-2 mt-1 shrink-0"></i><span>Update Backend to a Multi-Service Architecture</span></li>
+                        <li class="flex items-start"><i data-lucide="help-circle" class="w-5 h-5 text-amber-500 mr-2 mt-1 shrink-0"></i><span>Further requirements TBD</span></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Structure Section -->
+        <section id="team" class="mb-24">
+            <h2 class="text-4xl font-bold text-center text-slate-800 mb-4">Teams</h2>
+            <!-- <p class="text-center text-slate-500 mb-16 max-w-2xl mx-auto">Meet the dedicated individuals driving each project forward, from project management to technical oversight.</p> -->
+            
+            <!-- Top row of project teams -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200">
+                    <h4 class="font-bold text-xl mb-3 text-blue-600">CalVet</h4>
+                    <p><strong>Business Analysis:</strong> Andrea</p>
+                    <p><strong>Product Ownership:</strong> Dave</p>
+                    <p><strong>Project Management:</strong> Johnell</p>
+                    <p><strong>Executive Oversight:</strong> Jack</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200">
+                    <h4 class="font-bold text-xl mb-3 text-blue-600">New Mexico</h4>
+                    <p><strong>Project Management:</strong> Johnell</p>
+                    <p><strong>Specs/Requirements:</strong> Kevin</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200">
+                    <h4 class="font-bold text-xl mb-3 text-blue-600">VetPro National Maintenance</h4>
+                    <p><strong>Team Management:</strong> Aksana</p>
+                    <p><strong>Specs/Requirements:</strong> Marion/Kevin</p>
+                    <p><strong>Executive Oversight:</strong> Jeff</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200">
+                    <h4 class="font-bold text-xl mb-3 text-blue-600">VetPro National Features</h4>
+                    <p><strong>Team Management:</strong> Aksana</p>
+                    <p><strong>Specs/Requirements:</strong> Marion/Kevin/Jim</p>
+                    <p><strong>Executive Oversight:</strong> Jeff</p>
+                </div>
+            </div>
+
+            <!-- Visual Connector -->
+            <div class="hidden md:flex justify-center items-center h-24 relative">
+                <!-- Droplines from each project team, going down to the horizontal line -->
+                <div class="absolute top-0 left-[12.5%] w-px h-4 bg-slate-300"></div>
+                <div class="absolute top-0 left-[37.5%] w-px h-4 bg-slate-300"></div>
+                <div class="absolute top-0 left-[62.5%] w-px h-4 bg-slate-300"></div>
+                <div class="absolute top-0 left-[87.5%] w-px h-4 bg-slate-300"></div>
+                
+                <!-- Horizontal line connecting the bottom of the droplines -->
+                <div class="absolute top-4 w-3/4 left-1/2 h-px bg-slate-300 -translate-x-1/2"></div>
+                
+                <!-- Central line going down from the horizontal line to the Development card -->
+                <div class="absolute top-4 bottom-0 left-1/2 w-px bg-slate-300 -translate-x-1/2"></div>
+            </div>
+
+             <!-- Bottom row: Development Team -->
+            <div class="flex justify-center mt-8 md:mt-0">
+                <div class="bg-white p-6 rounded-lg shadow-lg border-2 border-blue-500 w-full md:w-2/3 lg:w-1/3">
+                    <h4 class="font-bold text-xl mb-2 text-blue-600 text-center">Development Team</h4>
+                    <p class="text-center text-xs text-slate-500 mb-4 font-semibold uppercase tracking-wider">(Serving All Project Branches)</p>
+                    <p><strong>Team Lead:</strong> Joey</p>
+                    <p><strong>PureScript:</strong> Nate, Steve</p>
+                    <p><strong>Elm:</strong> Rashad, Curtis</p>
+                    <p><strong>QA:</strong> Aksana</p>
+                    <p><strong>Technical Oversight:</strong> Charles</p>
+                </div>
+            </div>
+        </section>
+
+                <!-- VetPro Configurations Section -->
+        <section id="configurations" class="mb-24">
+            <h2 class="text-4xl font-bold text-center text-slate-800 mb-4">Simplified View of VetPro Configurations</h2>
+            <p class="text-center text-slate-500 mb-16 max-w-3xl mx-auto">A high level view of the VetPro configurations currently in use and the plan for California's migration.</p>
+
+            <!-- Grid for first 4 images -->
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <!-- Standard VetPro -->
+                <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 flex flex-col items-center">
+                    <h3 class="text-xl font-bold text-slate-800 mb-4 text-center">Standard VetPro</h3>
+                    <ul class="list-disc list-inside space-y-2 text-slate-500 mb-4">
+                        <li>Most customers have a single instance of VetPro in which users manage veteran information, complete forms, obtain signatures via the signature portal, and submit forms to the VA's Lighthouse API.</li>
+                    </ul>
+                    <img src="images/Standard VetPro.png" alt="Standard VetPro Diagram" class="rounded-lg border border-slate-200 w-full object-contain">
+                </div>
+                <!-- TVC VetPro -->
+                <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 flex flex-col">
+                    <h3 class="text-xl font-bold text-slate-800 mb-4 text-center">TVC VetPro</h3>
+                    <ul class="list-disc list-inside space-y-2 text-slate-500 mb-4">
+                        <li>TVC VetPro is a VetPro configuration used by the Texas Veterans Commission.</li>
+                        <li>It is a single instance of VetPro used by multiple agencies across the state of Texas</li>
+                        <li>This is our largest single VetPro instance.</li>
+                    </ul>
+                    <img src="images/TVC VetPro.png" alt="TVC VetPro Diagram" class="rounded-lg border border-slate-200 w-full object-contain">
+                </div>
+                <!-- South Carolina VetPro -->
+                <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 flex flex-col">
+                    <h3 class="text-xl font-bold text-slate-800 mb-4 text-center">South Carolina VetPro</h3>
+                    <ul class="list-disc list-inside space-y-2 text-slate-500 mb-4">
+                        <li>South Carolina VetPro is a VetPro configuration used by the South Carolina Department of Veterans Affairs.</li>
+                        <li>Each county in South Carolina has it's own VetPro instance.</li>
+                        <li>A central application pulls information from each of these instances to populate a customized suite of reports.</li>
+                    </ul>
+                    <img src="images/South Carolina VetPro.png" alt="South Carolina VetPro Diagram" class="rounded-lg border border-slate-200 w-full object-contain">
+                </div>
+                <!-- New Mexico VetPro -->
+                <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 flex flex-col">
+                    <h3 class="text-xl font-bold text-slate-800 mb-4 text-center">New Mexico VetPro</h3>
+                    <ul class="list-disc list-inside space-y-2 text-slate-500 mb-4">
+                        <li>New Mexico VetPro is a VetPro configuration used by the New Mexico Department of Veterans Affairs.</li>
+                        <li>It is a single instance of VetPro used by multiple counties across the state of New Mexico.</li>
+                        <li>A separate application houses a series of custom forms specific to New Mexico.</li>
+                    </ul>
+                    <img src="images/New Mexico VetPro.png" alt="New Mexico VetPro Diagram" class="rounded-lg border border-slate-200 w-full object-contain">
+                </div>
+            </div>
+
+            <!-- Subsection for CalVet Plan -->
+            <h3 class="text-3xl font-bold text-center text-slate-800 mb-4 mt-24">Plan for California VetPro</h3>
+            <p class="text-center text-slate-500 mb-16 max-w-3xl mx-auto">Visualizing the migration from the current legacy system to the future VetPro National environment.</p>
+            
+            <!-- Legacy -->
+            <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 max-w-5xl mx-auto min-h-screen flex flex-col items-center justify-center overflow-hidden">
+                <h3 class="text-xl font-bold text-slate-800 mb-4 text-center">CalVet Legacy VetProWeb</h3>
+                <ul class="list-disc list-inside space-y-2 text-slate-500 mb-4">
+                    <li>Legacy VetProWeb is the legacy system used by the California Department of Veterans Affairs.</li>
+                    <li>It is a single instance of VetPro used by multiple counties across California.</li>
+                    <li>It was developed as an offshoot from our Public Guardian/Public Administration applications and features were added incrementally over the years.</li>
+                    <li>As with VetPro National, the core of the application involves managing veteran information, completing forms, obtaining signatures via the signature portal, and submitting forms to the VA's Lighthouse API.</li>
+                    <li>The application supports a review process where regional offices can review and approve forms before submission to the VA.</li>
+                    <li>It allows the state to manage county subventions and track county performance via an auditing process.</li>
+                    <li>It also interfaces with a College Fee Waiver Verification Portal for secure management of College Fee Waivers.</li>
+                </ul>
+                <div class="w-full flex items-center justify-center">
+                    <img src="images/CalVet Legacy VetProWeb.png" alt="CalVet Legacy VetProWeb Diagram" class="rounded-lg border border-slate-200 max-h-[calc(100vh-260px)] w-auto max-w-full object-contain" loading="lazy">
+                </div>
+            </div>
+
+            <!-- National -->
+            <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 max-w-5xl mx-auto min-h-screen flex flex-col items-center justify-center overflow-hidden mt-8">
+                <h3 class="text-xl font-bold text-slate-800 mb-4 text-center">CalVet VetPro National</h3>
+                <ul class="list-disc list-inside space-y-2 text-slate-500 mb-4">
+                    <li>CalVet VetPro National is the fulfilment of the original VetPro plan started in 2015.</li>
+                    <li>Each county will have their own instance of VetPro National.</li>
+                    <li>A central CalVet application will be used to manage county subventions, track county performance, and manage compliance documentation.</li>
+                    <li>Some part of the CalVet ecosystem will also need to interface with the College Fee Waiver Verification Portal currently used by Legacy VetProwWeb.</li>
+                </ul>
+                <div class="w-full flex items-center justify-center">
+                    <img src="images/CalVet VetPro National.png" alt="CalVet VetPro National Diagram" class="rounded-lg border border-slate-200 max-h-[calc(100vh-260px)] w-auto max-w-full object-contain" loading="lazy">
+                </div>
+            </div>
+
+            <!-- Migration -->
+            <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 max-w-5xl mx-auto min-h-screen flex flex-col items-center justify-center overflow-hidden mt-8">
+                <h3 class="text-xl font-bold text-slate-800 mb-4 text-center">California VetPro Migration</h3>
+                <ul class="list-disc list-inside space-y-2 text-slate-500 mb-4">
+                    <li>The migration from legacy VetProWeb to VetPro National will involve moving the data of each county within VetProWeb to separate instances of VetPro National.</li>
+                    <li>VetPro National was designed with this eventual migration in mind, but some data loss is expected and will need to be clearly communicated to the VetProWeb users.</li>
+                </ul>
+                <div class="w-full flex items-center justify-center">
+                    <img src="images/California VetPro.png" alt="California VetPro Migration Diagram" class="rounded-lg border border-slate-200 max-h-[calc(100vh-260px)] w-auto max-w-full object-contain" loading="lazy">
+                </div>
+            </div>
+
+            <!-- Concluding Master Image -->
+            <h3 class="text-3xl font-bold text-center text-slate-800 mb-4 mt-24">Master VetPro Ecosystem</h3>
+            <p class="text-center text-slate-500 mb-16 max-w-3xl mx-auto">The complete, interconnected ecosystem of all VetPro configurations.</p>
+            <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 max-w-5xl mx-auto">
+                <img src="images/Master%20VetPro.png" alt="Master VetPro Ecosystem Diagram" class="rounded-lg border border-slate-200 w-full" loading="lazy">
+            </div>
+        </section>
+
+        <!-- California VetPro Section -->
+        <section id="california-vetpro" class="mb-24">
+            <h2 class="text-4xl font-bold text-center text-slate-800 mb-4">California VetPro</h2>
+            <p class="text-center text-slate-500 mb-16 max-w-3xl mx-auto">The strategic evolution of California's veteran services platform from legacy systems to the modern VetPro National architecture.</p>
+
+            <!-- Legacy System -->
+            <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 max-w-5xl mx-auto mb-8">
+                <h3 class="text-2xl font-bold text-slate-800 mb-4">Current State: CalVet Legacy VetProWeb</h3>
+                <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
+                    <li>Legacy system used by the California Department of Veterans Affairs</li>
+                    <li>Single instance serving multiple counties across California</li>
+                    <li>Developed as an offshoot from Public Guardian/Public Administration applications</li>
+                    <li>Core functionality: veteran information management, form completion, signature portal, VA Lighthouse API submission</li>
+                    <li>Regional review and approval process before VA submission</li>
+                    <li>County subvention management and performance auditing</li>
+                    <li>Integration with College Fee Waiver Verification Portal</li>
+                </ul>
+            </div>
+
+            <!-- Future State -->
+            <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 max-w-5xl mx-auto mb-8">
+                <h3 class="text-2xl font-bold text-slate-800 mb-4">Future State: CalVet VetPro National</h3>
+                <ul class="list-disc list-inside space-y-2 text-slate-600 mb-6">
+                    <li>Fulfillment of the original VetPro plan started in 2015</li>
+                    <li>Each county will have their own instance of VetPro National</li>
+                    <li>Central CalVet application for county subvention management and compliance tracking</li>
+                    <li>Integration with College Fee Waiver Verification Portal</li>
+                    <li>Modern, scalable architecture supporting future growth</li>
+                </ul>
+            </div>
+
+            <!-- Migration Strategy -->
+            <div class="bg-white p-6 rounded-lg shadow-md border border-slate-200 max-w-5xl mx-auto">
+                <h3 class="text-2xl font-bold text-slate-800 mb-4">Migration Strategy</h3>
+                <ul class="list-disc list-inside space-y-2 text-slate-600">
+                    <li>Data migration from legacy VetProWeb to separate VetPro National instances per county</li>
+                    <li>VetPro National designed with this migration in mind</li>
+                    <li>Some data loss expected and will be clearly communicated to users</li>
+                    <li>Phased approach to minimize disruption to county operations</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Final Thoughts Section -->
+        <section id="final-thoughts" class="text-center py-16 bg-blue-50 rounded-lg">
+            <h2 class="text-4xl font-bold text-slate-800">Did I miss anything?</h2>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-6 border-t border-slate-200 mt-12">
+        <p class="text-slate-500 text-sm">VetPro Presentation | Generated for internal review.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
+
